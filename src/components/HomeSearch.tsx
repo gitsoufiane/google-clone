@@ -3,7 +3,6 @@
 import React from "react";
 import { Search, Mic, RotateCcw } from "lucide-react";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 
 export function HomeSearch() {
   const [query, setQuery] = React.useState("");
@@ -19,9 +18,9 @@ export function HomeSearch() {
   const randomSearch = async () => {
     setRandomLoading(true);
     const res = await fetch("http://random-word-api.herokuapp.com/word");
-    if (!res.ok) throw new Error("Failed to fetch random word");
+    if (!res.ok) return;
     const [data] = await res.json();
-    if (!data) throw new Error("Failed to fetch random word");
+    if (!data) return;
     router.push(`/search/web?searchTerm=${data}`);
     setRandomLoading(false);
   };

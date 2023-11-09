@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components";
+import { Footer } from "@/components";
 import clsx from "clsx";
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,6 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={clsx(inter.className, "max-w-6xl mx-auto px-4 py-3")}>
         {children}
+        <Footer />
       </body>
     </html>
   );
