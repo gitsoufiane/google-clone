@@ -18,7 +18,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={clsx(inter.className, "max-w-6xl mx-auto px-4 py-3")}>
-        <Header />
         {children}
       </body>
     </html>
